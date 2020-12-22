@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "checkpercentage", "checkpercentage\checkpercentage.csproj", "{64FC15D3-10EC-48E7-9CCE-760C4F63792D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64FC15D3-10EC-48E7-9CCE-760C4F63792D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FC15D3-10EC-48E7-9CCE-760C4F63792D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FC15D3-10EC-48E7-9CCE-760C4F63792D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FC15D3-10EC-48E7-9CCE-760C4F63792D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B237AF2C-3084-46EB-A447-7D755BAAC8B3}
+	EndGlobalSection
+EndGlobal
