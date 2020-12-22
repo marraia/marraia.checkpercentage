@@ -1,82 +1,68 @@
 ﻿using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
+using System.CommandLine.IO;
 using System.CommandLine.Rendering;
 using System.IO;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Xml;
 
 namespace checkpercentage
 {
-    class Program
+    public static class Program
     {
-        private static InvocationContext invocationContext;
-        private static ConsoleRenderer consoleRenderer;
-
-        static void Main(InvocationContext invocationContext, string[] args)
+        public static async Task<int> Main(string[] args)
         {
-            Program.invocationContext = invocationContext;
-            consoleRenderer = new ConsoleRenderer(
-              invocationContext.Console,
-              mode: invocationContext.BindingContext.OutputMode(),
-              resetAfterRender: true
-            );
+            var cmd = new RootCommand
+            {
+                new Command("check", "Checks the percentage of unit tests")
+                {
+                    new Option<string>(new[] { "--directory", "-d"  }, "Directory where the Summary.xml file is located")
+                    {
+                        Argument = new Argument<string>
+                        {
+                            Arity = ArgumentArity.ExactlyOne
+                        }
+                    },
+                    new Option<string>(new[] { "--percentage", "-p" }, "Percentage value to check on your unit tests")
+                    {
+                        Argument = new Argument<string>
+                        {
+                            Arity = ArgumentArity.ExactlyOne
+                        }
+                    },
+                }.WithHandler(nameof(PercentageUnitTest)),
+            };
 
-            var cmd = new RootCommand();
-            cmd.AddCommand(CheckPercentage());
-
-            cmd.InvokeAsync(args).Wait();
+            return await cmd.InvokeAsync(args);
         }
 
-        private static Command CheckPercentage()
+        private static int PercentageUnitTest(string directory, string percentage, IConsole console)
         {
-            var command = new Command("check", "Checks the percentage of unit tests");
-            command.AddOption(new Option(new[] { "--directory", "-d" }, "Directory where the Summary.xml file is located")
+            if (string.IsNullOrEmpty(directory) ||
+                    string.IsNullOrEmpty(percentage))
             {
-                Argument = new Argument<string>
-                {
-                    Arity = ArgumentArity.ExactlyOne
-                }
-            });
+                Console.WriteLine("Usage: check [template] [options]");
+                Console.WriteLine("\n");
+                Console.WriteLine("Options:");
+                Console.WriteLine("-d, --directory <DirectorySummary>");
+                Console.WriteLine("-p, --percentage <Percentage>");
 
-            command.AddOption(new Option(new[] { "--percentage", "-p" }, "Percentage value to check on your unit tests")
-            {
-                Argument = new Argument<string>
-                {
-                    Arity = ArgumentArity.ExactlyOne
-                }
-            });
+                return 0;
+            }
 
-
-            command.Handler = CommandHandler.Create<string, string>((directory, percentage) => {
-                if (string.IsNullOrEmpty(directory) ||
-                     string.IsNullOrEmpty(percentage))
-                {
-                    Console.WriteLine("Usage: check [template] [options]");
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Options:");
-                    Console.WriteLine("-d, --directory <DirectorySummary>");
-                    Console.WriteLine("-p, --percentage <Percentage>");
-                }
-                else
-                {
-                    PercentageUnitTest(directory, percentage);
-                }
-            });
-
-            return command;
-        }
-
-        private static void PercentageUnitTest(string path, string percentage)
-        {
-            var fileInfo = new FileInfo(path);
+            var fileInfo = new FileInfo(directory);
 
             if (!fileInfo.Exists)
             {
-                throw new ArgumentException($"File Summary.xml not found in directory {path}");
+                console.Error.WriteLine($"File Summary.xml not found in directory {directory}");
+                return 1;
             }
 
             var file = new XmlDocument();
-            file.Load(path);
+            file.Load(directory);
 
             var nodes = file.SelectNodes("CoverageReport/Summary/Linecoverage");
             var percentageReplace = nodes[0].InnerText.Replace('.', ',');
@@ -87,14 +73,26 @@ namespace checkpercentage
 
             if (percentageActual >= percentageCheck)
             {
-                Console.WriteLine("========== Check Percentage Success =========");
-                Console.WriteLine($"Congratulations, unit tests reached {nodes[0].InnerText} % compared to your code");
+                console.Out.WriteLine("========== Check Percentage Success =========");
+                console.Out.WriteLine($"Congratulations, unit tests reached {nodes[0].InnerText} % compared to your code");
             }
             else
             {
-                Console.Error.WriteLine("========== Check Percentage Error =========");
-                Console.Error.WriteLine($"Unfortunately unit tests did not reach more than {percentage} % code coverage! It's at {nodes[0].InnerText} %");
+                console.Error.WriteLine("========== Check Percentage Error =========");
+                console.Error.WriteLine($"Unfortunately unit tests did not reach more than {percentage} % code coverage! It's at {nodes[0].InnerText} %");
+                
+                return 1;
             }
+
+            return 0;
+        }
+
+        private static Command WithHandler(this Command command, string methodName)
+        {
+            var method = typeof(Program).GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Static);
+            var handler = CommandHandler.Create(method!);
+            command.Handler = handler;
+            return command;
         }
     }
 }

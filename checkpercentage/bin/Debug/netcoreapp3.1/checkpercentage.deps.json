@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "checkpercentage/1.0.0": {
+      "checkpercentage/1.4.0": {
         "dependencies": {
           "Microsoft.WSMan.Management": "7.0.2",
           "System.CommandLine.DragonFruit": "0.3.0-alpha.20574.7",
@@ -799,7 +799,7 @@
     }
   },
   "libraries": {
-    "checkpercentage/1.0.0": {
+    "checkpercentage/1.4.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
