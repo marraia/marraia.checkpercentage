@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Library that verifies the percentage of your unit tests, for use on CD/CI")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.2.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.3.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marraia.CheckPercentage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("checkpercentage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.2.0.0")]
