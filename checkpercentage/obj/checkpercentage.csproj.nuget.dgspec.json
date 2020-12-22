@@ -5,10 +5,10 @@
   },
   "projects": {
     "C:\\_test\\checkpercentage\\checkpercentage\\checkpercentage.csproj": {
-      "version": "1.3.0",
+      "version": "1.4.0",
       "restore": {
         "projectUniqueName": "C:\\_test\\checkpercentage\\checkpercentage\\checkpercentage.csproj",
-        "projectName": "checkpercentage",
+        "projectName": "Marraia.CheckPercentage",
         "projectPath": "C:\\_test\\checkpercentage\\checkpercentage\\checkpercentage.csproj",
         "packagesPath": "C:\\Users\\foes\\.nuget\\packages\\",
         "outputPath": "C:\\_test\\checkpercentage\\checkpercentage\\obj\\",

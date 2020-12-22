@@ -92,8 +92,8 @@ namespace checkpercentage
             }
             else
             {
-                Console.WriteLine("========== Check Percentage Error =========");
-                Console.WriteLine($"##vso[task.logissue type=error;] Unfortunately unit tests did not reach more than {percentage} % code coverage! It's at {nodes[0].InnerText} %");
+                Console.Error.WriteLine("========== Check Percentage Error =========");
+                Console.Error.WriteLine($"Unfortunately unit tests did not reach more than {percentage} % code coverage! It's at {nodes[0].InnerText} %");
             }
         }
     }
