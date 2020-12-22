@@ -8,6 +8,8 @@
     <PackageIcon>logo.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/marraia/marraia.checkpercentage</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/marraia/marraia.checkpercentage</RepositoryUrl>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
