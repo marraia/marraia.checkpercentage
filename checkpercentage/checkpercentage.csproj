@@ -10,10 +10,10 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/marraia/marraia.checkpercentage</PackageProjectUrl>
     <RepositoryUrl>https://github.com/marraia/marraia.checkpercentage</RepositoryUrl>
-    <Version>1.5.2</Version>
+    <Version>1.5.3</Version>
     <Product>Marraia.CheckPercentage</Product>
-    <AssemblyVersion>1.5.2.0</AssemblyVersion>
-    <FileVersion>1.5.2.0</FileVersion>
+    <AssemblyVersion>1.5.3.0</AssemblyVersion>
+    <FileVersion>1.5.3.0</FileVersion>
     <Nullable>annotations</Nullable>
     <PackageId>Marraia.CheckPercentage</PackageId>
   </PropertyGroup>
