@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.CommandLine.IO;
-using System.CommandLine.Rendering;
 using System.IO;
+using System.Management.Automation;
 using System.Reflection;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -52,7 +51,16 @@ namespace checkpercentage
 
                 return 0;
             }
+            
+            using (var powershell = PowerShell.Create())
+            {
+                powershell.AddScript($"cd {directory}");
+                powershell.AddScript($"dotnet tool install -g dotnet-reportgenerator-globaltool");
+                powershell.AddScript($"reportgenerator '-reports:coverage.cobertura.xml'  '-targetdir:coveragereport' '-reporttypes:Html;Xml'");
+                var results = powershell.Invoke();
+            }
 
+            var directorySummary = $"{directory}\\coveragereport\\Summary.xml";
             var fileInfo = new FileInfo(directory);
 
             if (!fileInfo.Exists)

@@ -10,15 +10,19 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/marraia/marraia.checkpercentage</PackageProjectUrl>
     <RepositoryUrl>https://github.com/marraia/marraia.checkpercentage</RepositoryUrl>
-    <Version>1.5.0</Version>
+    <Version>1.5.1</Version>
     <Product>Marraia.CheckPercentage</Product>
-    <AssemblyVersion>1.5.0.0</AssemblyVersion>
-    <FileVersion>1.5.0.0</FileVersion>
+    <AssemblyVersion>1.5.1.0</AssemblyVersion>
+    <FileVersion>1.5.1.0</FileVersion>
     <Nullable>annotations</Nullable>
     <PackageId>Marraia.CheckPercentage</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.PowerShell.Commands.Diagnostics" Version="7.0.2" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Management" Version="7.0.2" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.0.2" />
+    <PackageReference Include="Microsoft.PowerShell.ConsoleHost" Version="7.0.2" />
     <PackageReference Include="Microsoft.WSMan.Management" Version="7.0.2" />
     <PackageReference Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.20574.7" />
     <PackageReference Include="System.Management.Automation" Version="7.0.2" />
