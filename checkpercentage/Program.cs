@@ -51,17 +51,24 @@ namespace checkpercentage
 
                 return 0;
             }
-            
+
+            var directoryReport = directory.Replace("\\coveragereport\\Summary.xml", "");
+
             using (var powershell = PowerShell.Create())
             {
-                powershell.AddScript($"cd {directory}");
+                powershell.AddScript($"cd {directoryReport}");
                 powershell.AddScript($"dotnet tool install -g dotnet-reportgenerator-globaltool");
                 powershell.AddScript($"reportgenerator '-reports:coverage.cobertura.xml'  '-targetdir:coveragereport' '-reporttypes:Html;Xml'");
                 var results = powershell.Invoke();
             }
 
-            var directorySummary = $"{directory}\\coveragereport\\Summary.xml";
-            var fileInfo = new FileInfo(directorySummary);
+            var fileInfo = new FileInfo(directory);
+
+            if (!fileInfo.Exists)
+            {
+                console.Error.WriteLine($"File Summary.xml not found in directory {directory}");
+                return 1;
+            }
 
             if (!fileInfo.Exists)
             {
