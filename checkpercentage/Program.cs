@@ -61,7 +61,7 @@ namespace checkpercentage
             }
 
             var directorySummary = $"{directory}\\coveragereport\\Summary.xml";
-            var fileInfo = new FileInfo(directory);
+            var fileInfo = new FileInfo(directorySummary);
 
             if (!fileInfo.Exists)
             {
