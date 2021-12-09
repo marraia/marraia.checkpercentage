@@ -44,23 +44,23 @@
           "dependencies": {
             "Microsoft.PowerShell.Commands.Diagnostics": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.1.5, )"
             },
             "Microsoft.PowerShell.Commands.Management": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.1.5, )"
             },
             "Microsoft.PowerShell.Commands.Utility": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.1.5, )"
             },
             "Microsoft.PowerShell.ConsoleHost": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.1.5, )"
             },
             "Microsoft.WSMan.Management": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.1.5, )"
             },
             "System.CommandLine.DragonFruit": {
               "target": "Package",
@@ -68,7 +68,7 @@
             },
             "System.Management.Automation": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.1.5, )"
             }
           },
           "imports": [
