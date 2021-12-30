@@ -52,23 +52,22 @@ namespace checkpercentage
                 return 0;
             }
 
-            var directoryReport = directory.Replace("\\coveragereport\\Summary.xml", "");
+            var summaryFile = new FileInfo(directory);
 
-            using (var powershell = PowerShell.Create())
+            if (!summaryFile.Exists)
             {
-                powershell.AddScript($"cd {directoryReport}");
-                powershell.AddScript($"dotnet tool install -g dotnet-reportgenerator-globaltool");
-                powershell.AddScript($"reportgenerator '-reports:coverage.cobertura.xml'  '-targetdir:coveragereport' '-reporttypes:Html;Xml'");
-                var results = powershell.Invoke();
+                var directoryReport = directory.Replace("\\coveragereport\\Summary.xml", "");
+
+                using (var powershell = PowerShell.Create())
+                {
+                    powershell.AddScript($"cd {directoryReport}");
+                    powershell.AddScript($"dotnet tool install -g dotnet-reportgenerator-globaltool");
+                    powershell.AddScript($"reportgenerator '-reports:coverage.cobertura.xml'  '-targetdir:coveragereport' '-reporttypes:Html;Xml'");
+                    var results = powershell.Invoke();
+                }
             }
 
             var fileInfo = new FileInfo(directory);
-
-            if (!fileInfo.Exists)
-            {
-                console.Error.WriteLine($"File Summary.xml not found in directory {directory}");
-                return 1;
-            }
 
             if (!fileInfo.Exists)
             {
@@ -81,10 +80,10 @@ namespace checkpercentage
 
             var nodes = file.SelectNodes("CoverageReport/Summary/Linecoverage");
             var percentageReplace = nodes[0].InnerText.Replace('.', ',');
-            var percentageActual = double.Parse(percentageReplace);
+            var percentageActual = decimal.Parse(percentageReplace);
 
             var percentageCheckReplace = percentage.Replace('.', ',');
-            var percentageCheck = double.Parse(percentageCheckReplace);
+            var percentageCheck = decimal.Parse(percentageCheckReplace);
 
             if (percentageActual >= percentageCheck)
             {
