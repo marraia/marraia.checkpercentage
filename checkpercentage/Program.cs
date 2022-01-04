@@ -79,11 +79,11 @@ namespace checkpercentage
             file.Load(directory);
 
             var nodes = file.SelectNodes("CoverageReport/Summary/Linecoverage");
-            var percentageReplace = nodes[0].InnerText.Replace('.', ',');
-            var percentageActual = decimal.Parse(percentageReplace);
+            var percentageReplace = nodes[0].InnerText;
+            var percentageActual = double.Parse(percentageReplace);
 
-            var percentageCheckReplace = percentage.Replace('.', ',');
-            var percentageCheck = decimal.Parse(percentageCheckReplace);
+            var percentageCheckReplace = percentage;
+            var percentageCheck = double.Parse(percentageCheckReplace);
 
             if (percentageActual >= percentageCheck)
             {
