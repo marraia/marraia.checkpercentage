@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B2NdkkOn1rEqAjXHa3pjmdFqjSZS/CWYdwIgq0jH2HWFh2cz46qcZGbzgeepD27PfHYjKNQP6xPxFfQqfmMq1A==",
+  "dgSpecHash": "zXZrxMJlrChicrLZ3vsscLV20OrKmye+tfAvygA+JKH3Ifgws5QPkgV0AiT+LR4V0CzAnbzaFcmAy9JYo7NEaQ==",
   "success": true,
   "projectFilePath": "C:\\Fernando\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj",
   "expectedPackageFiles": [
@@ -57,8 +57,7 @@
     "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
     "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\system.threading.accesscontrol\\5.0.0\\system.threading.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
-    "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
-    "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
