@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zXZrxMJlrChicrLZ3vsscLV20OrKmye+tfAvygA+JKH3Ifgws5QPkgV0AiT+LR4V0CzAnbzaFcmAy9JYo7NEaQ==",
+  "dgSpecHash": "7+bx6Sl1aVgyGZdB2O2OK7A2CD4NcQG109ICTbsUKn6bYyGXyFEyrShQyzklJIq/Fl7+8x8kUmePqV5iS+T0uw==",
   "success": true,
-  "projectFilePath": "C:\\Fernando\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj",
+  "projectFilePath": "C:\\_projects\\_me\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\markdig.signed\\0.21.1\\markdig.signed.0.21.1.nupkg.sha512",
     "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\microsoft.applicationinsights\\2.15.0\\microsoft.applicationinsights.2.15.0.nupkg.sha512",

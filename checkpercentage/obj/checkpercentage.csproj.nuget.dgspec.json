@@ -1,38 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Fernando\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj": {}
+    "C:\\_projects\\_me\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj": {}
   },
   "projects": {
-    "C:\\Fernando\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj": {
-      "version": "1.6.5",
+    "C:\\_projects\\_me\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj": {
+      "version": "1.7.0",
       "restore": {
-        "projectUniqueName": "C:\\Fernando\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj",
+        "projectUniqueName": "C:\\_projects\\_me\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj",
         "projectName": "Marraia.CheckPercentage",
-        "projectPath": "C:\\Fernando\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj",
+        "projectPath": "C:\\_projects\\_me\\marraia.checkpercentage\\checkpercentage\\checkpercentage.csproj",
         "packagesPath": "C:\\Users\\mendes.fernando_site\\.nuget\\packages\\",
-        "outputPath": "C:\\Fernando\\marraia.checkpercentage\\checkpercentage\\obj\\",
+        "outputPath": "C:\\_projects\\_me\\marraia.checkpercentage\\checkpercentage\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\mendes.fernando_site\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://code.ifoodcorp.com.br/api/v4/projects/9297/packages/nuget/index.json": {},
-          "https://pkgs.dev.azure.com/superainovacoes/sitemercado/_packaging/sm-nuget/nuget/v3/index.json": {}
+          "https://code.ifoodcorp.com.br/api/v4/projects/9297/packages/nuget/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -43,8 +38,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.PowerShell.Commands.Diagnostics": {
               "target": "Package",
@@ -81,7 +76,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -90,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
